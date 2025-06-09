@@ -1,8 +1,1961 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Science des Données</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --dark-color: #1a1a2e;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #777;
+            --white: #fff;
+            --black: #000;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Barre de navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+        }
+
+        .btn-line {
+            width: 25px;
+            height: 3px;
+            background: var(--dark-color);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Section Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(78, 84, 200, 0.1) 0%, rgba(143, 148, 251, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(78, 84, 200, 0.3);
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            animation: fadeInRight 1s ease;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-icons {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-icons i {
+            font-size: 2rem;
+            margin: 0 10px;
+            color: var(--primary-color);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tech-icons i::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .tech-icons i:hover::after {
+            opacity: 1;
+            visibility: visible;
+            bottom: -50px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .mouse {
+            width: 25px;
+            height: 40px;
+            border: 2px solid var(--dark-color);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 5px;
+        }
+
+        .wheel {
+            width: 5px;
+            height: 8px;
+            background: var(--dark-color);
+            border-radius: 3px;
+            animation: scroll 1.5s infinite;
+        }
+
+        /* Section Bilan Personnel */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        .data-visualization {
+            width: 100%;
+            height: 400px;
+            background: rgba(78, 84, 200, 0.05);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-visualization::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(78, 84, 200, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .chart {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        /* Section Expérience - Timeline améliorée */
+        .experience {
+            background: linear-gradient(135deg, rgba(78, 84, 200, 0.03) 0%, rgba(143, 148, 251, 0.03) 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(78, 84, 200, 0.4);
+        }
+
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(78, 84, 200, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            transform: translateX(-50%) scale(1.2);
+            background: var(--primary-color);
+            box-shadow: 0 0 15px rgba(78, 84, 200, 0.8);
+        }
+
+        .timeline-content {
+            width: calc(50% - 60px);
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            transform-origin: left center;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            transform-origin: right center;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: 100%;
+            border-width: 12px 18px 12px 0;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: 100%;
+            border-width: 12px 0 12px 18px;
+            border-color: transparent transparent transparent var(--white);
+        }
+
+        .date {
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(78, 84, 200, 0.3);
+            transform: translateY(-5px);
+            opacity: 0;
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .timeline-item.visible .date {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .timeline-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.5s ease;
+        }
+
+        .timeline-item:hover .timeline-content h3::after {
+            width: 100%;
+        }
+
+        .timeline-content ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .timeline-item.visible .timeline-content li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item.visible .timeline-content li:nth-child(1) { transition-delay: 0.3s; }
+        .timeline-item.visible .timeline-content li:nth-child(2) { transition-delay: 0.4s; }
+        .timeline-item.visible .timeline-content li:nth-child(3) { transition-delay: 0.5s; }
+
+        /* carousel */
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            box-sizing: border-box;
+        }
+
+        .project-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--white);
+            box-shadow: var(--box-shadow);
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 30px;
+            gap: 40px;
+            width: 90%;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-tags span {
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        .project-image {
+            flex: 1;
+            position: relative;
+            max-width: 400px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-links {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .project-image:hover .project-links {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .project-links a {
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .project-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .carousel-btn.prev {
+            left: 5px;
+        }
+
+        .carousel-btn.next {
+            right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .project-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-image {
+                max-width: 100%;
+            }
+        }
+
+        /* contact */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Pied de page */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background: var(--dark-color);
+            color: var(--white);
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-content::before {
+                left: -15px !important;
+                right: auto !important;
+                border-width: 10px 15px 10px 0 !important;
+                border-color: transparent var(--white) transparent transparent !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .image-wrapper {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .personal-reflection {
+            background: #fff;
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .personal-reflection h3 {
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+        }
+
+        .personal-reflection p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        #bilan {
+            background: linear-gradient(135deg, rgba(78, 84, 200, 0.03) 0%, rgba(143, 148, 251, 0.03) 100%);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tools-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .tool-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .tool-logos img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-logos img:hover {
+            transform: scale(1.2);
+        }
+        .tools-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .tool-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .tool-logo {
+            font-size: 1.2rem;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;  /* Pour obtenir un cercle */
+            width: 45px;  /* Largeur du cercle */
+            height: 45px;  /* Hauteur du cercle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-logo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section Styles */
+        .about-block {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .about-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .about-img {
+            flex: 1;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .skills-list {
+            margin-top: 20px;
+            columns: 2;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step {
+            background: rgba(78, 84, 200, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            background: rgba(78, 84, 200, 0.1);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-block, .about-block.reverse {
+                flex-direction: column;
+            }
+            
+            .skills-list {
+                columns: 1;
+            }
+            
+            .method-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><span>Portfolio</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">Me connaître</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#bilan">Bilan</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-text">Bonjour, je suis Chirol Quentin<br><span>Étudiant en Science des Données</span></h1>
+                <p class="hero-subtitle">Passionné par l'analyse de données, le machine learning et la visualisation</p>
+                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                <a href="./img/Chirol Quentin.pdf" class="btn btn-outline">Télécharger mon CV</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="./img/photo_profile.JPG" alt="Photo de profil" class="profile-img">
+                    <div class="tech-icons">
+                        <i class="fab fa-python" data-tooltip="Python"></i>
+                        <i class="fas fa-database" data-tooltip="SQL"></i>
+                        <i class="fab fa-r-project" data-tooltip="R"></i>
+                        <i class="fas fa-chart-line" data-tooltip="DataViz"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>         
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">Me <span>Connaître</span></h2>
+            
+            <!-- Bloc 1 - Présentation -->
+            <div class="about-block">
+                <div class="about-img">
+                    <img src="./img/photo_quiuisje.jpg" alt="Photo de Quentin Chirol" class="profile-photo">
+                </div>
+                <div class="about-text">
+                    <h3>Qui suis-je ?</h3>
+                    <p>Étudiant passionné en Science des Données, j’ai développé cet intérêt à partir d’une passion pour l’analyse des marchés financiers en ligne. Cette curiosité m’a naturellement conduit à approfondir mes compétences en statistiques, en programmation et en visualisation de données, avec un intérêt particulier pour l’intelligence artificielle.</p>
+                    <div class="signature">
+                        <p>Chirol Quentin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bloc 2 - Parcours -->
+            <div class="about-block reverse">
+                <div class="about-img">
+                    <img src="./img/photo_londre.jpg" alt="Campus universitaire" class="campus-photo">
+                </div>
+                <div class="about-text">
+                    <h3>Londre</h3>
+                    <p>J’adore voyager, mais ce que je recherche avant tout, c’est une immersion totale dans la culture d’un pays. J’ai eu cette chance lors de mon voyage scolaire de 3ᵉ, où je suis parti à Londres pendant une semaine dans une famille d’accueil. Cette expérience m’a permis de découvrir la culture britannique de l’intérieur et d’améliorer mon anglais de manière concrète.</p>
+                </div>
+            </div>
+
+                        
+            <!-- Bloc 3 - Présentation -->
+            <div class="about-block">
+                <div class="about-img">
+                    <img src="./img/photo_australie2.jpg" alt="Photo de Quentin Chirol" class="profile-photo">
+                </div>
+                <div class="about-text">
+                    <h3>Australie</h3>
+                    <p>Après cette première immersion à Londres, j’ai voulu revivre une expérience similaire, mais encore plus intense. J’ai donc profité des vacances d’été pour partir en Australie, dans une école privée près de Sydney. J’ai adoré cette expérience, aussi bien sur le plan linguistique que culturel. J’étais hébergé dans une famille d’accueil très chaleureuse, ce qui m’a permis de m’immerger pleinement dans le mode de vie australien. J’ai également eu l’occasion de visiter le pays… et de réaliser que la moitié des animaux là-bas pouvaient potentiellement me tuer ! Une aventure inoubliable, à la fois enrichissante et pleine de surprises.</p>
+                </div>
+            </div>
+
+            <!-- Bloc 4 - Parcours -->
+            <div class="about-block reverse">
+                <div class="about-img">
+                    <img src="./img/photo_irlande2.jpg" alt="Campus universitaire" class="campus-photo">
+                </div>
+                <div class="about-text">
+                    <h3>L'Irland</h3>
+                    <p>Je suis parti un an en Erasmus en Irlande, et ce fut sans aucun doute l’une des plus belles expériences de ma vie. Même si tout n’a pas été parfait — j’étais dans une famille d’accueil principalement motivée par l’argent, et l’école, pensant que mes précédents voyages prouvaient un bon niveau, m’a directement placé dans une classe supérieure… avec de la physique-chimie, ma bête noire ! — j’en garde un souvenir très positif. J’ai noué des amitiés très fortes avec d’autres étudiants étrangers et des Irlandais, avec qui je suis toujours en contact aujourd’hui. Grâce à eux, j’ai eu la chance de voyager encore plus, notamment en Allemagne.</p>
+                </div>
+            </div>
+            
+            <!-- Bloc 3 - Méthodologie -->
+            <div class="about-block">
+                <div class="about-img">
+                    <img src="./img/photo_macdo.JPG" alt="Méthode de travail" class="method-photo">
+                </div>
+                <div class="about-text">
+                    <h3>McDonald's</h3>
+                    <p>Travailler chez McDonald’s a été l’un des emplois les plus exigeants que j’ai connus, mais l’ambiance y a toujours été excellente, ce qui rend l’expérience vraiment agréable. Cela fait bientôt deux ans que je travaille là-bas, et je vais renouveler mon contrat pendant ces vacances, car j’apprécie à la fois les défis du métier et l’esprit d’équipe qui règne.</p>
+                </div>
+            </div>
+
+            <!-- Bloc 4 - Parcours -->
+            <div class="about-block reverse">
+                <div class="about-img">
+                    <img src="./img/photo_info.png" alt="Campus universitaire" class="campus-photo">
+                </div>
+                <div class="about-text">
+                    <h3>Mes project</h3>
+                    <p>Passionné par l’informatique appliquée à la data, j’ai mené plusieurs projets personnels mêlant programmation, analyse de données, intelligence artificielle et automatisation. J’ai développé des analyses financières avec Python, en explorant les marchés et en créant des bots de trading automatisés. J’ai également travaillé sur le web scraping, utilisant Selenium avec Microsoft Edge pour automatiser la récupération de données sur LinkedIn. Ce projet incluait l’utilisation d’un modèle d’intelligence artificielle capable de traiter et d’interpréter le code HTML des pages pour extraire efficacement des leads commerciaux. Par ailleurs, j’ai entrepris la création d’un site de streaming et d’un site de montage automatique de vidéos pour TikTok, démontrant mon intérêt pour les applications web interactives et la gestion de contenu multimédia. J’ai aussi exploré la cybersécurité à travers la conception pédagogique d’un virus, afin de mieux comprendre les mécanismes d’attaque et de défense informatiques. Ces projets m’ont permis de développer une expertise solide en programmation, gestion de données, automatisation, développement web, intelligence artificielle et cybersécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expérience Professionnelle -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">Mon <span>Expérience</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content animate-card">
+                        <h3>Équipier polyvalent</h3>
+                        <span class="date">Juillet 2023 - 2025</span>
+                        <p>McDonald’s – Niort & Villefranche-de-Lauragais</p>
+                        <ul>
+                            <li>Prise de commandes et encaissement en caisse</li>
+                            <li>Préparation des commandes en cuisine dans le respect des normes d’hygiène et de sécurité</li>
+                            <li>Accueil des clients et gestion des demandes spécifiques en salle</li>
+                        </ul>
+                        <p><strong>Compétences acquises :</strong></p>
+                        <div class="project-tags" style="margin-top: 10px;">
+                            <span>Prise de commande</span>
+                            <span>Encaissement</span>
+                            <span>Hygiène alimentaire</span>
+                            <span>Relation client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content animate-card">
+                        <h3>Vendeur polyvalent</h3>
+                        <br><span class="date">Juillet 2023</span>
+                        <p>Comptoir du Lauragais - Aire de Port Lauragais (A61)</p>
+                        <ul>
+                            <li>Organisation des rayons et étiquetage</li>
+                            <li>Vente et promotion d’informations touristiques pour la région de Haute-Garonne</li>
+                        </ul>
+                        <p><strong>Compétences acquises :</strong></p>
+                        <div class="project-tags" style="margin-top: 10px;">
+                            <span>Relation client</span>
+                            <span>Travail en équipe</span>
+                            <span>Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tools-section">
+                <h2 class="section-title">Outils <span>maîtrisés</span></h2>
+                <div class="tool-logos">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/python.svg" alt="Python" title="Python">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" alt="SQL" title="SQL">
+                    <span class="tool-logo">VBA</span>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftexcel.svg" alt="Excel" title="Excel">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/powerbi.svg" alt="Power BI" title="Power BI">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tableau.svg" alt="Tableau" title="Tableau">
+                    <span class="tool-logo">SAS</span>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/rstudio.svg" alt="RStudio" title="RStudio">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt="HTML" title="HTML">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" alt="CSS" title="CSS">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript" title="JavaScript">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Mes <span>Projects</span></h2>
+            <div class="carousel">
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <!-- SAE - Reporting à partir de données stockées dans un SGBD relationnel -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Reporting à partir de données stockées dans un SGBD relationnel</h3>
+                            <p>Lors de cette SAÉ, j'ai été confronté à la création d'un outil de gestion des notes pour le BUT SD1 en utilisant Excel. L'élément principal de ce travail consistait à développer une application permettant l'ajout, la modification et la visualisation des notes des étudiants, avec des fonctionnalités de tableau de bord dynamique et de décision de jury automatique.</p>
+                            <div class="project-tags">
+                                <span>Manipulation de données</span>
+                                <span>VBA</span>
+                                <span>Rapports interactifs</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Reporting à partir de données stockées dans un SGBD relationnel.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Reporting-partir-de-donn-es-stock-es-dans-un-SGBD-relationnel.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE - Ecriture et lecture de fichiers de données -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Ecriture et lecture de fichiers de données</h3>
+                            <p>Lors de cette SAÉ, j'ai été confronté à des données issues d'un fichier JSON contenant des événements et activités de la Ville de Paris. L'élément principal de ce travail consistait à transformer ce fichier JSON en un fichier CSV avec des colonnes spécifiques, en utilisant un script Python.</p>
+                            <div class="project-tags">
+                                <span>Manipulation de fichiers</span>
+                                <span>Gestion de données</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Ecriture et lecture de fichiers de données.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Ecriture-et-lecture-de-fichiers-de-donn-es.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE - Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple</h3>
+                            <p>Lors de cette SAÉr, j'ai analysé des données issues d'une enquête sur l'activité sportive des étudiants niortais. J'ai découvert que 75% des étudiants pratiquent un sport, principalement pour rester en forme, mais rencontrent des obstacles comme le manque de temps et l'accès limité aux installations.</p>
+                            <div class="project-tags">
+                                <span>Rédaction de rapports</span>
+                                <span>Creation tableau de bord</span>
+                                <span>Travaille d'équipe</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE - Apprendre en situation la production de données en entreprise -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Apprendre en situation la production de données en entreprise</h3>
+                            <p>Lors de cette SAÉ, j'ai été confronté à l'analyse des résultats électoraux dans le département de la Haute-Vienne (87) pour comprendre les dynamiques ayant conduit au succès électoral de la coalition du NFP. L'élément principal de ce travail consistait à examiner des indicateurs clés tels que la démographie, l'emploi et le chômage, en utilisant des données du recensement de la population et des statistiques de l'INSEE.</p>
+                            <div class="project-tags">
+                                <span>Analyse statistique</span>
+                                <span>Interprétation de donnée</span>
+                                <span>Rédaction de rapports</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Apprendre en situation la production de données en entreprise.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Apprendre-en-situation-la-production-de-donn-es-en-entreprise.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE - Présentation en anglais d'un territoire économique et culturel -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Présentation en anglais d'un territoire économique et culturel</h3>
+                            <p>Lors de cette SAÉ, j'ai été confronté à la présentation des Jeux Olympiques de Londres 2012. L'élément principal de ce travail consistait à analyser et présenter les aspects économiques et culturels de cet événement majeur.</p>
+                            <div class="project-tags">
+                                <span>Recherche/analyse d'informations</span>
+                                <span>Présentation orale et écrite</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Présentation en anglais d'un territoire économique et culturel.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Pr-sentation-en-anglais-d-un-territoire-conomique-et-culturel.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE - Mise en œuvre d'une enquête -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Mise en œuvre d'une enquête</h3>
+                            <p>Lors de cette SAÉ, j'ai conçu un questionnaire destiné aux étudiants du campus afin de recueillir des informations sur leurs habitudes au sein de l’établissement. J’ai défini les thèmes à explorer, formulé des questions claires et pertinentes, organisé la collecte des réponses, puis procédé à un dépouillement et à une analyse statistique des résultats pour en dégager les principales tendances.</p>
+                            <div class="project-tags">
+                                <span>Conception de questionnaires</span>
+                                <span>Analyse statistique simplee</span>
+                                <span>Synthèse et restitution d'enquête</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Mise en œuvre d'une enquête.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE – Conception d’une base de données  -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE - Conception d'une base de données</h3>
+                            <p>Lors de cette SAÉ, j'ai dû modéliser une base de données pour une entreprise spécialisée dans la vente de sel. J'ai réalisé l'analyse des besoins, conçu le Modèle Conceptuel de Données (MCD), puis le Modèle Logique de Données (MLD), avant de procéder à l'implémentation de la base en langage SQL.</p>
+                            <div class="project-tags">
+                                <span>Modélisation de bases de données</span>
+                                <span>SQL</span>
+                                <span>Structuration et organisation de données relationnelles</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Conception d'une base de données.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Conception-d-une-base-de-donn-es.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAÉ - Régression sur des données réelles  -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAÉ - Régression sur des données réelles</h3>
+                            <p>Lors de cette SAÉ, j’ai dû importer et explorer les deux jeux de données (train et test), nettoyer et préparer les variables (gestion des valeurs manquantes, transformations nécessaires), étudier la distribution de la variable cible (prix de vente) et son lien avec les variables explicatives (croisements statistiques et graphiques). J’ai ensuite implémenté une régression exponentiel sur R pour prédire les données de test grâce aux données train. </p>
+                            <div class="project-tags">
+                                <span>Modélisation statistique</span>
+                                <span>R</span>
+                                <span>Évaluation des modèles de régression</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Régression sur des données réelles.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-R-gression-sur-des-donn-es-r-elles.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAÉ - Concour Dataviz  -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAÉ - Concour Dataviz</h3>
+                            <p>Lors de cette SAÉ, j’ai participé à un concours de datavisualisation portant sur la scolarisation des 15-29 ans en France. À partir de données INSEE enrichies via l’Open Data, j’ai choisi d’analyser les DOM à l’accès à l’enseignement supérieur. J’ai utilisé Excel pour l’analyse et Canva pour concevoir une infographie claire, esthétique et lisible en une page, à destination d’un public non expert, en respectant les contraintes graphiques imposées.</p>
+                            <div class="project-tags">
+                                <span>Création d’une infographie</span>
+                                <span>Analyse statistique</span>
+                                <span>Mise en forme de données</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Concour Dataviz2.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Concour-Dataviz.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAÉ - Échantillonnage et estimation statistique  -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAÉ - Échantillonnage et estimation statistique</h3>
+                            <p>Lors de cette SAÉ, j’ai travaillé sur l’estimation de la population de l’Occitanie en comparant deux méthodes d’échantillonnage : l’échantillonnage aléatoire simple et l’échantillonnage stratifié, afin d’évaluer leur précision respective. En parallèle, j’ai mené une analyse statistique sur les pratiques sportives des étudiants en utilisant le test du khi² d’indépendance, pour identifier d’éventuelles relations avec des variables socio-démographiques. Cette expérience m’a permis de consolider ma maîtrise de R et d’approfondir mes connaissances en inférence statistique.</p>
+                            <div class="project-tags">
+                                <span>Realisation d'un échantillonnage</span>
+                                <span>Manipulation de R</span>
+                                <span>Redaction d'un rapport</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAÉ - Échantillonnage et estimation statistique.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-chantillonnage-et-estimation-statistique.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAÉ – Indicateurs de performance -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAÉ - Indicateurs de performance</h3>
+                            <p>Lors de cette SAÉ, j’ai analysé la performance économique de Fleury Michon à partir de données financières de 2019 à 2023. L’étude portait sur l’évolution du chiffre d’affaires, de la rentabilité, de la productivité et de la capacité d’autofinancement. Nous avons identifié les effets de la hausse des coûts sur la valeur ajoutée et l’EBE, puis formulé des recommandations : meilleure maîtrise des charges, optimisation des marges, et adaptation stratégique du portefeuille de produits.</p>
+                            <div class="project-tags">
+                                <span>Interprétation de documents comptables</span>
+                                <span>Réalisation d’un diagnostic </span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAÉ – Indicateurs de performance.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Indicateurs-de-performance.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE – Visualisation des données -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE – Visualisation des données</h3>
+                            <p>Lors de cette SAÉ, j’ai exploité les bases de données Parcoursup 2023 et 2024 pour analyser les formations selon différents critères (type, domaine, localisation, candidatures). J’ai choisi un thème d’étude, puis réalisé six graphiques variés (univariés, bivariés, géographiques, etc.) avec ggplot sous R, chacun accompagné d’une information chiffrée extraite visuellement. Le code devait être propre, commenté, et débuter par une sélection rigoureuse des données.</p>
+                            <div class="project-tags">
+                                <span>Visualisation de données</span>
+                                <span>Construction de graphiques univariés, bivariés, tridimensionnels et cartographiques</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Visualisation des données.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SAE-Visualisation-des-donn-es.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SAE – Analyse de données, reporting et datavisualisation -->
+                <div class="carousel-item">
+                    <div class="project-container">
+                        <div class="project-info">
+                            <h3>SAE – Analyse de données, reporting et datavisualisation</h3>
+                            <p>Lors de cette SAÉ, j’ai analysé un fichier Excel sur les accidents domestiques en France. J’ai conçu un outil dynamique pour nettoyer les données, comparer les volontaires à la population générale, identifier les facteurs de risque, et créer un tableau de bord clair. L’outil est automatisé pour intégrer facilement de nouveaux fichiers, afin d’aider à définir des mesures de prévention efficaces. Ce projet m’a permis de renforcer mes compétences en gestion de données et en analyse statistique.</p>
+                            <div class="project-tags">
+                                <span>Visualisation de données</span>
+                                <span>Construction de graphiques univariés, bivariés</span>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="./img/SAE - Analyse de données, reporting et datavisualisation.png" alt="Projet SAE SGBD">
+                            <div class="project-links">
+                                <a href="https://github.com/quentinchirol/SA-_-Analyse-de-donn-es-Reporting-et-Datavisualisation.git"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <!-- Section Bilan Personnel -->
+    <section id="bilan" class="section Bilan">
+        <div class="container">
+            <h2 class="section-title">Mon <span>Bilan Personnel</span></h2>
+            <div class="personal-reflection">
+                <p>En général, l’année a été une réelle surprise pour moi. En partant de ma licence informatique, je cherchais une formation beaucoup plus soutenue, ce que le BUT Science des données m’a apporté, avec des projets concrets qui m’ont ouvert les yeux sur un aspect fondamental : un gros projet en informatique ne peut pas être réalisé seul, mais en groupe, avec un travail collaboratif efficace.</p>
+                <p>Au début de l'année, j'étais un peu sceptique, n’étant pas certain de la manière dont une formation plus pratique et orientée projets réels allait s’intégrer dans mon parcours. Cependant, à mesure que les projets se sont enchaînés, j’ai vite compris que ce type de formation me correspondait parfaitement. Les projets de groupe, les études de cas réelles et les ateliers m’ont permis de voir l’importance de la collaboration et de la gestion de projet dans le monde de l'informatique. Cela m’a aussi permis de développer des compétences en communication et en résolution de problèmes.</p>
+                <p>Ce que j’ai particulièrement apprécié dans cette formation, c’est l’approche centrée sur la pratique, où chaque projet était une occasion de mettre en application les concepts appris en cours. J'ai aussi appris à gérer le temps et à travailler en équipe, ce qui est essentiel pour mener à bien des projets d’envergure.</p>
+                <p>Les projets en collaboration m'ont permis de m’ouvrir à de nouvelles idées et de comprendre que, même si une personne peut être experte dans un domaine spécifique, la réalisation d’un projet informatique de grande envergure nécessite une forte synergie entre les membres d'une équipe aux compétences complémentaires.</p>
+                <p>Cependant, l’un de mes plus grands défis cette année a été lié à l’aspect du travail continu. En effet, j’ai choisi de travailler en parallèle de mes études avec un contrat étudiant, ce qui m’a permis d’acquérir de l’expérience professionnelle, mais qui a aussi eu des conséquences sur mes révisions et la qualité de mon travail. Le fait de jongler entre les responsabilités professionnelles et les exigences de la formation m’a parfois pénalisé dans certains contrôles et examens. J’aurais aimé avoir plus de temps pour réviser en profondeur et fournir un travail encore meilleur, mais cette expérience m’a appris à m'organiser différemment et à gérer plus efficacement mon temps.</p>
+                <p>Travailler tout en étudiant m’a également permis de développer une certaine résilience et une meilleure gestion du stress, car il a fallu que je trouve un équilibre entre mes études, mon travail et ma vie personnelle. Cela m’a donné une meilleure perspective sur l'importance de l'organisation et de la priorisation des tâches.</p>
+                <p>J’ai aussi, à contre-cœur, dû repousser ou abandonner certains de mes projets personnels. J’avais des idées passionnantes que je voulais développer, mais le manque de temps m’a empêché de les réaliser comme je l’aurais souhaité. C’est une frustration, car ces projets étaient des occasions idéales pour approfondir certaines compétences techniques et créatives.</p>
+                <p>J’espère que l’année prochaine, je pourrai intégrer le monde du travail en alternance, afin d’avoir l’opportunité de voir si je souhaite vraiment m’investir à long terme dans le domaine de l’informatique. Cela me permettra également d'affiner mon expérience professionnelle et de valider si cette voie correspond à mes aspirations et à mes compétences. Cette expérience sera l’occasion de développer de nouvelles compétences, tout en approfondissant les connaissances acquises durant cette première année.</p>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Section Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Me <span>Contacter</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>quentin.chirol@etu.univ-poitiers.fr</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+33 7 70 08 81 09</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Niort, France</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/quentin-chirol-89a2b127b"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/quentinchirol"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Sujet">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Chirol Quentin. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    function animateProjects() {
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, index * 200);
+        });
+    }
+    animateProjects();
+
+    // Animation améliorée de la timeline
+    function animateTimeline() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        timelineItems.forEach((item, index) => {
+            const itemPosition = item.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (itemPosition < screenPosition) {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 200);
+            }
+        });
+    }
+    animateTimeline();
+
+    // Observer spécifique pour la timeline
+    const timelineObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+    }, { threshold: 0.2 });
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => timelineObserver.observe(item));
+
+    // Carousel
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const items = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const width = items[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+
+    // Navigation manuelle
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+        resetInactivityTimer();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+        resetInactivityTimer();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+
+    // ⏰ Inactivité -> passage automatique après 1 min
+    let inactivityTimer = null;
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+            resetInactivityTimer(); // relancer le timer pour l’auto-suivant
+        }, 30000); // 60000 ms = 1 minute
+    }
+
+    // Démarrer le timer dès le début
+    resetInactivityTimer();
+
+    // Animation de la barre de navigation au scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Menu mobile
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
     
-  </head>
-  <body>
-    <h1>AHHHH</h1>
-  </body>
+    menuBtn.addEventListener('click', function() {
+        menuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Animation des lignes du bouton menu
+        document.querySelectorAll('.btn-line').forEach((line, index) => {
+            if (menuBtn.classList.contains('active')) {
+                if (index === 0) {
+                    line.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                } else if (index === 1) {
+                    line.style.opacity = '0';
+                } else {
+                    line.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                }
+            } else {
+                line.style.transform = 'rotate(0) translate(0, 0)';
+                line.style.opacity = '1';
+            }
+        });
+    });
+
+    // Fermer le menu mobile lors du clic sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (navLinks.classList.contains('active')) {
+                menuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.querySelectorAll('.btn-line').forEach(line => {
+                    line.style.transform = 'rotate(0) translate(0, 0)';
+                    line.style.opacity = '1';
+                });
+            }
+        });
+    });
+
+    // Animation des barres de compétences
+    const skillBars = document.querySelectorAll('.skill-level');
+    skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        bar.style.width = level + '%';
+    });
+
+    // Animation au défilement
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.animate-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.style.animation = 'fadeInUp 1s ease forwards';
+            }
+        });
+    };
+
+    // Simulation d'un graphique radar (simplifié)
+    const radarChart = document.getElementById('radar-chart');
+    if (radarChart) {
+        const skills = ['Python', 'SQL', 'ML', 'Viz', 'Stats', 'Cloud'];
+        const levels = [85, 75, 70, 80, 65, 60]; // Correspond aux compétences
+        
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 300;
+        radarChart.appendChild(canvas);
+        
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 120;
+        const angle = (2 * Math.PI) / skills.length;
+        
+        // Dessiner le fond du radar
+        ctx.strokeStyle = 'rgba(78, 84, 200, 0.2)';
+        ctx.lineWidth = 1;
+        
+        // Cercles concentriques
+        for (let i = 1; i <= 5; i++) {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * (i / 5), 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+        
+        // Lignes radiales
+        for (let i = 0; i < skills.length; i++) {
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(
+                centerX + radius * Math.cos(angle * i - Math.PI / 2),
+                centerY + radius * Math.sin(angle * i - Math.PI / 2)
+            );
+            ctx.stroke();
+            
+            // Étiquettes des compétences
+            ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--text-color') || '#333';
+            ctx.font = '12px Montserrat';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(
+                skills[i],
+                centerX + (radius + 20) * Math.cos(angle * i - Math.PI / 2),
+                centerY + (radius + 20) * Math.sin(angle * i - Math.PI / 2)
+            );
+        }
+        
+        // Dessiner les données
+        ctx.fillStyle = 'rgba(78, 84, 200, 0.5)';
+        ctx.strokeStyle = 'rgba(78, 84, 200, 1)';
+        ctx.lineWidth = 2;
+        
+        ctx.beginPath();
+        for (let i = 0; i < skills.length; i++) {
+            const levelRadius = (radius * levels[i]) / 100;
+            const x = centerX + levelRadius * Math.cos(angle * i - Math.PI / 2);
+            const y = centerY + levelRadius * Math.sin(angle * i - Math.PI / 2);
+            
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+            
+            // Points aux extrémités
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(78, 84, 200, 0.2)';
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    // Lissage du défilement pour les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+    </script>
+</body>
 </html>
