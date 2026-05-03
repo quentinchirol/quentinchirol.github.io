@@ -1,0 +1,17 @@
+# /**
+#  * @AI_SPACE
+#  * @purpose : Orchestration Docker locale du portfolio
+#  * @logic : Définit le service web basé sur le Dockerfile, et mappe le port 8080 local vers le port 80 du conteneur.
+#  * @decisions : Port 8080 choisi arbitrairement pour éviter les conflits avec un serveur local éventuel.
+#  * @references : https://docs.docker.com/compose/
+#  */
+
+version: '3.8'
+
+services:
+  portfolio:
+    build: .
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    container_name: portfolio_v2

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Portfolio | Quentin - Data Analyst</title>
+    <!--
+          @AI_SPACE
+          @purpose : Adaptation du template "bedimcode/portfolio-responsive-complete" pour un profil Data Analyst.
+          @logic : Remplacement des placeholders par les véritables informations de Quentin.
+          @decisions : Conservation de la structure HTML native du thème open source.
+        -->
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Quentin</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Acceuil</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Me connaître</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Expérience</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Bonjour, je suis <span class="home__title-color">Quentin</span></h1>
+                <p class="home__description">
+                    Passionné par la data, je transforme des écosystèmes complexes en tableaux de bord clairs,
+                    performants et actionnables pour faciliter la prise de décision. J'accompagne les entreprises sur
+                    toute la chaîne de valeur, de l'extraction de la donnée brute jusqu'à sa visualisation stratégique.
+                </p>
+                <div class="home__actions">
+                    <a href="Chirol_Quentin.pdf" class="button" target="_blank">CV</a>
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/quentin-chirol-89a2b127b" class="home__social-icon"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/quentinchirol" class="home__social-icon"><i
+                                class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__img">
+                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <mask id="mask0" mask-type="alpha">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                    </mask>
+                    <g mask="url(#mask0)">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                        <image class="home__blob-img" x="80" y="10" href="assets/img/perfil.png" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <h2 class="section-title">Me connaître</h2>
+
+            <div class="about__container bd-grid">
+                <!-- Intro principale -->
+                <div class="about__intro">
+                    <div class="about__avatar">
+                        <i class='bx bx-user-circle'></i>
+                    </div>
+                    <div class="about__text">
+                        <p class="about__lead">
+                            Je m'appelle <span class="about__highlight">Quentin Chirol</span>, j'ai <span
+                                class="about__highlight">21 ans</span> et je suis étudiant en <span
+                                class="about__highlight">Science des Données</span>.
+                        </p <p class="about__body">
+                        Je suis passionné par l'analyse des données, un intérêt que j'ai développé à partir de ma
+                        curiosité pour les marchés financiers et le trading, ce qui m'a naturellement amené à apprendre
+                        la programmation, les statistiques et à m'intéresser à l'intelligence artificielle. J'aime
+                        travailler sur des projets concrets, automatiser des tâches et transformer des données en
+                        informations utiles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cartes 3 piliers -->
+                <div class="about__cards">
+                    <div class="about__card about__card--data">
+                        <div class="about__card-icon">
+                            <i class='bx bx-line-chart'></i>
+                        </div>
+                        <h3 class="about__card-title">Données & IA</h3>
+                        <p class="about__card-text">De la curiosité pour les marchés financiers à la data science :
+                            programmation, statistiques et intelligence artificielle. J'automatise, j'explore, je
+                            visualise.</p>
+                    </div>
+
+                    <div class="about__card about__card--world">
+                        <div class="about__card-icon">
+                            <i class='bx bx-globe'></i>
+                        </div>
+                        <h3 class="about__card-title">Ouverture internationale</h3>
+                        <p class="about__card-text">Immersions à <strong>Londres</strong>, en <strong>Australie</strong>
+                            et <strong>un an en Irlande</strong> — autonomie renforcée, anglais maîtrisé, adaptation à
+                            des environnements variés.</p>
+                        <div class="about__flags">
+                            <span title="Royaume-Uni">🇬🇧</span>
+                            <span title="Australie">🇦🇺</span>
+                            <span title="Irlande">🇮🇪</span>
+                        </div>
+                    </div>
+
+                    <div class="about__card about__card--work">
+                        <div class="about__card-icon">
+                            <i class='bx bx-briefcase'></i>
+                        </div>
+                        <h3 class="about__card-title">Expérience terrain</h3>
+                        <p class="about__card-text">Près de <strong>2 ans chez McDonald's</strong> : rigueur, gestion du
+                            stress et travail en équipe dans un environnement dynamique et exigeant.</p>
+                        <ul class="about__badges">
+                            <li>Rigueur</li>
+                            <li>Travail d'équipe</li>
+                            <li>Gestion du stress</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== EXPERIENCE =====-->
+        <section class="experience section" id="experience">v
+            <h2 class="section-title">Expérience</h2>
+
+            <div class="experience__container bd-grid">
+                <div class="timeline">
+                    <div class="timeline-item" style="--i: 0">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Avr. 2026 - Maintenant</span>
+                            <h3>Data Analyst</h3>
+                            <p class="timeline-company">MACIF</p>
+                            <p class="timeline-desc">En cour ...</p>
+                            <ul class="timeline-skills">
+                                <li>DATAIKU</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" style="--i: 1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Juil. 2023 - Nov. 2025</span>
+                            <h3>Equipier Polyvalent</h3>
+                            <p class="timeline-company">McDonald's – Niort & Villefranche-de-Lauragais</p>
+                            <p class="timeline-desc">
+                                Prise de commandes et encaissement en caisse<br>
+                                Préparation des commandes en cuisine<br>
+                                Accueil des clients
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Prise de commande</li>
+                                <li>Encaissement</li>
+                                <li>Hygiène alimentaire</li>
+                                <li>Relation client</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" style="--i: 4">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 - 2026</span>
+                            <h3>Tuteur Informatique</h3>
+                            <p class="timeline-company">IUT Niort</p>
+                            <p class="timeline-desc">Tuteur de soutien en informatique pour les étudiants de première
+                                année.</p>
+                            <ul class="timeline-skills">
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" style="--i: 3">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - 2023</span>
+                            <h3>Site Web Leads</h3>
+                            <p class="timeline-company">Helvetia - Lausagne</p>
+                            <p class="timeline-desc">Développement d'un site web d'acquisition de leads avec interface
+                                responsive.</p>
+                            <ul class="timeline-skills">
+                                <li>AWS - EC2</li>
+                                <li>Ubuntu</li>
+                                <li>FastAPI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </script>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Compétences</h2>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__map-wrapper">
+                        <div class="map">
+                            <!-- Level 1 (most important: 140-130px) -->
+                            <div class="node" style="--size: 160px; --i: 0" data-name="Python">
+                                <div class="node-content" data-name="Python">
+                                    <i class='bx bxl-python'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 140px; --i: 1" data-name="Pandas">
+                                <div class="node-content" data-name="Pandas">
+                                    <i class='bx bxs-analyse'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 150px; --i: 2" data-name="SQL">
+                                <div class="node-content" data-name="SQL">
+                                    <i class='bx bxs-data'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 130px; --i: 3" data-name="FastAPI">
+                                <div class="node-content" data-name="FastAPI">
+                                    <i class='bx bx-network-chart'></i>
+                                </div>
+                            </div>
+                            <!-- Level 2 (115-120px) -->
+                            <div class="node" style="--size: 120px; --i: 4" data-name="Scikit-learn">
+                                <div class="node-content" data-name="Scikit-learn">
+                                    <i class='bx bxs-brain'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 115px; --i: 5" data-name="GitHub">
+                                <div class="node-content" data-name="GitHub">
+                                    <i class='bx bxl-github'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 120px; --i: 6" data-name="Talend">
+                                <div class="node-content" data-name="Talend">
+                                    <i class='bx bxs-data'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 115px; --i: 7" data-name="Dashboard">
+                                <div class="node-content" data-name="Dashboard">
+                                    <i class='bx bxs-dashboard'></i>
+                                </div>
+                            </div>
+                            <!-- Level 3 (100-105px) -->
+                            <div class="node" style="--size: 105px; --i: 8" data-name="Data Cleaning">
+                                <div class="node-content" data-name="Data Cleaning">
+                                    <i class='bx bx-filter'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 100px; --i: 9" data-name="Stats">
+                                <div class="node-content" data-name="Stats">
+                                    <i class='bx bx-list-check'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 105px; --i: 10" data-name="Automation">
+                                <div class="node-content" data-name="Automation">
+                                    <i class='bx bx-sync'></i>
+                                </div>
+                            </div>
+                            <!-- Level 4 (85-95px) -->
+                            <div class="node" style="--size: 95px; --i: 11" data-name="Tableau">
+                                <div class="node-content" data-name="Tableau">
+                                    <i class='bx bxs-pie-chart-alt-2'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 90px; --i: 12" data-name="Power BI">
+                                <div class="node-content" data-name="Power BI">
+                                    <i class='bx bxs-bar-chart-alt-2'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 95px; --i: 13" data-name="Excel">
+                                <div class="node-content" data-name="Excel">
+                                    <i class='bx bxl-microsoft'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 90px; --i: 14" data-name="VBA">
+                                <div class="node-content" data-name="VBA">
+                                    <i class='bx bxs-file'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 120px; --i: 15" data-name="Docker">
+                                <div class="node-content" data-name="Docker">
+                                    <i class='bx bxs-cube'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 85px; --i: 16" data-name="R">
+                                <div class="node-content" data-name="R">
+                                    <i class='bx bxs-component'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 90px; --i: 17" data-name="QGIS">
+                                <div class="node-content" data-name="QGIS">
+                                    <i class='bx bxs-map'></i>
+                                </div>
+                            </div>
+                            <!-- Level 5 (less important: 75-85px) -->
+                            <div class="node" style="--size: 85px; --i: 18" data-name="HTML">
+                                <div class="node-content" data-name="HTML">
+                                    <i class='bx bxl-html5'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 80px; --i: 19" data-name="CSS">
+                                <div class="node-content" data-name="CSS">
+                                    <i class='bx bxl-css3'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 85px; --i: 20" data-name="JavaScript">
+                                <div class="node-content" data-name="JavaScript">
+                                    <i class='bx bxl-javascript'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 80px; --i: 21" data-name="React">
+                                <div class="node-content" data-name="React">
+                                    <i class='bx bxl-react'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 75px; --i: 22" data-name="ML / IA">
+                                <div class="node-content" data-name="ML / IA">
+                                    <i class='bx bx-brain'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 80px; --i: 23" data-name="AWS">
+                                <div class="node-content" data-name="AWS">
+                                    <i class='bx bxs-cloud'></i>
+                                </div>
+                            </div>
+                            <div class="node" style="--size: 150px; --i: 24" data-name="Dataiku">
+                                <div class="node-content" data-name="Dataiku">
+                                    <i class='bx bxs-cloud'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Script pour le layout mind map -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const maps = document.querySelectorAll('.map');
+                    maps.forEach(map => {
+                        const nodes = Array.from(map.querySelectorAll('.node'));
+                        const count = nodes.length;
+
+                        //Prendre la taille directement depuis le HTML
+                        const nodeSizes = nodes.map(node => {
+                            const size = parseFloat(node.style.getPropertyValue('--size')) || 80;
+                            return size;
+                        });
+
+                        //Positionnement harmonique
+                        const positions = [];
+                        const maxIterations = 300;
+                        const maxRadius = 300;
+
+                        //Initialisation en spirale
+                        nodes.forEach((node, index) => {
+                            const angle = index * 137.5 * Math.PI / 180;
+                            const targetR = 80 + (index / count) * maxRadius * 0.5;
+                            const x = Math.cos(angle) * targetR;
+                            const y = Math.sin(angle) * targetR;
+                            positions.push({ x, y, size: nodeSizes[index], index });
+                        });
+
+                        //Simulation de forces reduite
+                        for (let iter = 0; iter < maxIterations; iter++) {
+                            const repulsion = 80 * (1 - iter / maxIterations);
+
+                            positions.forEach((p1, i) => {
+                                positions.forEach((p2, j) => {
+                                    if (i === j) return;
+                                    const dx = p1.x - p2.x;
+                                    const dy = p1.y - p2.y;
+                                    const dist = Math.hypot(dx, dy) || 1;
+                                    const minDist = (p1.size + p2.size) / 2 + 18;
+
+                                    if (dist < minDist) {
+                                        const force = (minDist - dist) * repulsion / 1000;
+                                        p1.x += (dx / dist) * force;
+                                        p1.y += (dy / dist) * force;
+                                    }
+                                });
+
+                                const distToCenter = Math.hypot(p1.x, p1.y);
+                                if (distToCenter > maxRadius) {
+                                    p1.x *= 0.96;
+                                    p1.y *= 0.96;
+                                }
+                            });
+                        }
+
+                        //Appliquer les positions
+                        nodes.forEach((node, index) => {
+                            const p = positions[index];
+                            node.style.setProperty('--x', `${p.x.toFixed(1)}`);
+                            node.style.setProperty('--y', `${p.y.toFixed(1)}`);
+                        });
+
+                        //Taille de la map
+                        let maxDist = 0;
+                        positions.forEach(p => {
+                            const dist = Math.hypot(p.x, p.y) + p.size / 2;
+                            if (dist > maxDist) maxDist = dist;
+                        });
+                        const mapSize = Math.min(700, Math.round(maxDist * 2 + 30));
+
+                        map.style.setProperty('--node-count', count);
+                        map.style.setProperty('--s', `${mapSize}px`);
+                    });
+                });
+            </script>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work-search">
+                    <div class="work-search-bar">
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="work-search-input" placeholder="Rechercher un projet...">
+                    </div>
+                    <div class="work-filters">
+                        <button class="filter-btn active" data-filter="all">Tous</button>
+                        <button class="filter-btn" data-filter="BUT1">BUT1</button>
+                        <button class="filter-btn" data-filter="BUT2">BUT2</button>
+                        <button class="filter-btn" data-filter="data">Data</button>
+                        <button class="filter-btn" data-filter="web">Web</button>
+                        <button class="filter-btn" data-filter="ml">ML/IA</button>
+                        <button class="filter-btn" data-filter="viz">Visualisation</button>
+                    </div>
+                </div>
+
+                <div class="work__container bd-grid" id="work-grid">
+                    <!-- Card 1 -->
+                    <div class="work-card" data-category="BUT1 data dashboard" data-tags="Excel VBA Dashboard"
+                        data-title="Reporting SGBD"
+                        data-description="J’ai développé une application complète de gestion des notes sur Excel en VBA, permettant d’ajouter, modifier et consulter les résultats des étudiants de manière automatisée. Le projet inclut un tableau de bord interactif avec indicateurs clés ainsi qu’un système de décision de jury automatisé, facilitant la prise de décision et le suivi des performances."
+                        data-download="assets\project\Reporting à partir de données stockées dans un SGBD relationnel.zip"
+                        data-project="">
+                        <img src="assets/img/Reporting à partir de données stockées dans un SGBD relationnel.png"
+                            alt="Reporting SGBD">
+                        <div class="work-card-content">
+                            <h3>Reporting SGBD</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Python JSON CSV"
+                        data-title="JSON vers CSV (Python)"
+                        data-description="J’ai exploité des données ouvertes de la Ville de Paris sous format JSON, que j’ai transformées en fichier CSV structuré à l’aide d’un script Python. Ce travail impliquait le parsing du JSON, la sélection des variables pertinentes et la mise en forme des données pour les rendre exploitables dans des outils d’analyse."
+                        data-download="https://codesandbox.io/p/github/quentinchirol/SAE-Ecriture-et-lecture-de-fichiers-de-donn-es/main?import=true&embed=1"
+                        data-project="">
+                        <img src="assets/img/Ecriture et lecture de fichiers de données.png" alt="JSON vers CSV">
+                        <div class="work-card-content">
+                            <h3>JSON vers CSV (Python)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Analyse Exploration"
+                        data-title="Analyse activité sportive"
+                        data-description="J’ai analysé une enquête sur les pratiques sportives des étudiants niortais en réalisant un travail complet de traitement, d’exploration et d’interprétation des données. L’étude met en évidence que 75 % des étudiants pratiquent un sport, principalement pour rester en forme, tout en identifiant des freins majeurs comme le manque de temps et l’accès limité aux infrastructures."
+                        data-download="" data-project="">
+                        <img src="assets/img/Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple.png"
+                            alt="Analyse activité sportive">
+                        <div class="work-card-content">
+                            <h3>Analyse activité sportive</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Analyse INSEE"
+                        data-title="Analyse électorale (Haute-Vienne)"
+                        data-description="J’ai étudié les résultats électoraux du département de la Haute-Vienne en les croisant avec des données socio-économiques (démographie, emploi, chômage, données INSEE). L’objectif était de comprendre les dynamiques territoriales et d’expliquer certaines tendances politiques à partir d’indicateurs quantitatifs."
+                        data-download="assets\img\stat.pdf" data-project="">
+                        <img src="assets/img/Apprendre en situation la production de données en entreprise.png"
+                            alt="Analyse électorale">
+                        <div class="work-card-content">
+                            <h3>Analyse électorale (Haute-Vienne)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="work-card" data-category="BUT1" data-tags="Anglais Présentation"
+                        data-title="Présentation JO Londres 2012"
+                        data-description="J’ai réalisé une présentation en anglais sur les Jeux Olympiques de Londres 2012, en analysant leurs impacts économiques et culturels. Ce travail a mobilisé des compétences en recherche d’information, synthèse et communication orale dans un contexte international."
+                        data-download="https://docs.google.com/presentation/d/1IrQ9dKPpYFRLKTKvHyVmb_Dm8vi6GostOWyo-TaDBhQ/edit?usp=sharing"
+                        data-project="">
+                        <img src="assets/img/Présentation en anglais d'un territoire économique et culturel.png"
+                            alt="Présentation JO Londres 2012">
+                        <div class="work-card-content">
+                            <h3>Présentation JO Londres 2012</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Enquête Statistiques"
+                        data-title="Enquête étudiants"
+                        data-description="J’ai conçu une enquête complète auprès des étudiants du campus : définition des objectifs, rédaction des questions, organisation de la collecte des données, puis analyse statistique des réponses. Ce projet m’a permis d’identifier des tendances comportementales et de produire une synthèse claire et exploitable."
+                        data-download="" data-project="">
+                        <img src="assets/img/Mise en œuvre d'une enquête.png" alt="Enquête étudiants">
+                        <div class="work-card-content">
+                            <h3>Enquête étudiants</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="SQL Modélisation"
+                        data-title="Base de données (SQL)"
+                        data-description="J’ai modélisé une base de données relationnelle pour une entreprise de vente de sel en partant de l’analyse des besoins. J’ai conçu le MCD, le MLD, puis implémenté la base en SQL, en structurant les données de manière cohérente et optimisée pour leur exploitation."
+                        data-download="assets\project\Conception d'une base de données.zip" data-project="">
+                        <img src="assets/img/Conception d'une base de données.png" alt="Base de données SQL">
+                        <div class="work-card-content">
+                            <h3>Base de données (SQL)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="work-card" data-category="BUT1 data ml" data-tags="R Modélisation Régression"
+                        data-title="Régression (R)"
+                        data-description="J’ai mené un projet complet de modélisation prédictive en R : nettoyage des données, gestion des valeurs manquantes, analyse exploratoire et étude des relations entre variables. J’ai ensuite implémenté une régression exponentielle pour prédire des prix de vente, avec une évaluation des performances du modèle."
+                        data-download="assets\project\Régression sur des données réelles.zip" data-project="">
+                        <img src="assets/img/Régression sur des données réelles.png" alt="Régression R">
+                        <div class="work-card-content">
+                            <h3>Régression (R)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="work-card" data-category="BUT1 data viz" data-tags="Excel Dataviz Canva"
+                        data-title="Concours Dataviz"
+                        data-description="J’ai participé à un concours de datavisualisation portant sur la scolarisation des 15–29 ans en France, avec un focus sur les DOM. À partir de données INSEE enrichies, j’ai réalisé une analyse statistique puis conçu une infographie claire, esthétique et accessible avec Excel et Canva, destinée à un public non expert."
+                        data-download="assets\project\Concour Dataviz.png" data-project="">
+                        <img src="assets/img/Concour Dataviz.png" alt="Concours Dataviz">
+                        <div class="work-card-content">
+                            <h3>Concours Dataviz</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Statistiques Échantillonnage"
+                        data-title="Échantillonnage & statistiques"
+                        data-description="J’ai comparé deux méthodes d’échantillonnage (aléatoire simple et stratifié) pour estimer une population et évaluer leur précision. En parallèle, j’ai réalisé une analyse statistique avec un test du khi² afin d’identifier des relations entre variables dans une enquête sur les pratiques sportives étudiantes."
+                        data-download="assets\project\Echantillonage-et-Estimation.pdf" data-project="">
+                        <img src="assets/img/Échantillonnage et estimation statistique.png"
+                            alt="Échantillonnage et statistiques">
+                        <div class="work-card-content">
+                            <h3>Échantillonnage & statistiques</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 -->
+                    <div class="work-card" data-category="BUT1 data" data-tags="Finance Analyse"
+                        data-title="Analyse financière (Fleury Michon)"
+                        data-description="J’ai analysé les performances financières de Fleury Michon entre 2019 et 2023 à partir de données comptables. L’étude portait sur le chiffre d’affaires, la rentabilité, la productivité et la capacité d’autofinancement, avec identification des impacts de la hausse des coûts et formulation de recommandations stratégiques."
+                        data-download="assets\project\Indicateurs de performance.pdf" data-project="">
+                        <img src="assets/img/Indicateurs de performance.png" alt="Analyse financière">
+                        <div class="work-card-content">
+                            <h3>Analyse financière (Fleury Michon)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 12 -->
+                    <div class="work-card" data-category="BUT1 data dashboard" data-tags="Dashboard Analyse Reporting"
+                        data-title="Accidents domestiques"
+                        data-description="J’ai développé un outil d’analyse et de reporting à partir de données sur les accidents domestiques en France. Le projet inclut le nettoyage des données, la comparaison entre populations, l’identification des facteurs de risque et la création d’un tableau de bord automatisé, conçu pour intégrer facilement de nouvelles données et aider à la prévention."
+                        data-download="" data-project="">
+                        <img src="assets/img/Analyse de données, reporting et datavisualisation.png"
+                            alt="Visualisation Parcoursup">
+                        <div class="work-card-content">
+                            <h3>Accidents domestiques</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 13 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 data dashboard viz" data-tags="R Shiny Plotly Leaflet Dashboard"
+                        data-title="Dashboard Pauvreté en France"
+                        data-description="Dans le cadre de ma 2ème année de BUT Science des Données, j'ai conçu un tableau de bord interactif complet déployé sur ShinyApps.io. À partir de données INSEE, ce dashboard explore les inégalités de pauvreté par département en France : carte choroplèthe interactive (Leaflet), corrélations multivariées avec régression dynamique (linéaire, exponentielle, logarithmique), analyse en composantes principales (PCA) et KPIs clés. Intégration complète de Plotly pour des visualisations responsives et interactives."
+                        data-download="assets/project/Dashboard.zip"
+                        data-project="https://quentinchirol.shinyapps.io/Dashboard/">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/Dashboard Pauvreté R Shiny.png" alt="Dashboard Pauvreté R Shiny">
+                        <div class="work-card-content">
+                            <h3>Dashboard Pauvreté en France</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 14 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 data" data-tags="SQL PostgreSQL MCD MLD Modélisation"
+                        data-title="Base de données avancée (BUT2)"
+                        data-description="Projet de 2ème année centré sur la modélisation et l'implémentation d'une base de données relationnelle avancée. J'ai réalisé une analyse complète des besoins, conçu le Modèle Conceptuel de Données (MCD) et le Modèle Logique de Données (MLD), puis implémenté la base en SQL avec contraintes d'intégrité, triggers et procédures stockées pour garantir la cohérence et la performance des données."
+                        data-download="assets/project/Base_project.zip"
+                        data-project="">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/Base de données avancée.png" alt="Base de données avancée">
+                        <div class="work-card-content">
+                            <h3>Base de données avancée</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 15 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 web data" data-tags="Python FastAPI HTML CSS JavaScript Développement"
+                        data-title="SAE Développement Web (BUT2)"
+                        data-description="SAE de développement réalisée en 2ème année de BUT : conception et développement d'une application web full-stack intégrant un back-end Python (FastAPI) et un front-end moderne (HTML/CSS/JS). Le projet couvre le cycle complet de développement — spécifications, architecture, implémentation, tests et documentation — avec une attention particulière portée à la qualité du code et à l'expérience utilisateur."
+                        data-download="assets/project/SAE DEV.zip"
+                        data-project="">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/SAE Développement.png" alt="SAE Développement Web">
+                        <div class="work-card-content">
+                            <h3>SAE Développement Web</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 16 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 data ml" data-tags="Statistiques Régression Or Finance Prévision"
+                        data-title="Analyse & prévision du cours de l'or"
+                        data-description="Dans le cadre de ma 2ème année de BUT Science des Données, j'ai mené une étude complète sur le marché de l'or. Le projet comprend une analyse statistique des données historiques de prix, l'identification des facteurs d'influence (inflation, taux de change, indices boursiers), la modélisation prédictive (régression, tendances) et la production de visualisations permettant d'anticiper les évolutions du cours. Une approche quantitative appliquée à un actif financier réel."
+                        data-download="assets/project/project_a_rendre.docx"
+                        data-project="">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/Analyse de l'or.png" alt="Analyse du cours de l'or">
+                        <div class="work-card-content">
+                            <h3>Analyse & prévision du cours de l'or</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 17 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 web data" data-tags="FastAPI React Docker Python JavaScript Oracle API"
+                        data-title="LEAV – Attribution de véhicules"
+                        data-description="Dans le cadre de ma 2ème année de BUT Science des Données, j'ai conçu et développé LEAV, une application web full-stack déployée via Docker Compose. L'application automatise l'attribution quotidienne de la flotte de véhicules aux préleveurs de tournées en tenant compte de contraintes logistiques complexes. Backend FastAPI (Python) connecté à Oracle avec exposition d'une API RESTful, Frontend React 18 + Vite avec planning hebdomadaire interactif, éditeur de données en ligne, module Oracle intégré et catalogue véhicules dynamique. Architecture Monolithe Modulaire Zero-Waste."
+                        data-download=""
+                        data-project="https://github.com/quentinchirol/Besoin_du_territoire">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/LEAV Attribution Véhicules.png" alt="LEAV Attribution de véhicules">
+                        <div class="work-card-content">
+                            <h3>LEAV – Attribution de véhicules</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card 18 – BUT2 -->
+                    <div class="work-card work-card--but2" data-category="BUT2 data web viz" data-tags="FastAPI Streamlit Docker Python DBLP Bibliométrie NLP API"
+                        data-title="Analyse Bibliométrique – Labo LIAS"
+                        data-description="SAE de 2ème année réalisée pour le laboratoire LIAS (Université de Poitiers) sous la direction de M. Mesmoudi. Périmètre : équipes IDD (11 membres) et SETR (8 membres) sur la période 2021–2025. Pipeline de collecte automatisée depuis DBLP (API XML), CORE Rankings, SCImago (quartiles Q1–Q4) et Theses.fr. Architecture microservices Docker Compose : API REST FastAPI avec 7 endpoints (membres, publications, indicateurs, graphe de co-publications, simulations de marginalisation/transfert) et dashboard Streamlit interactif à 5 pages (vue d'ensemble, comparaison équipes, fiche chercheur, réseau de collaboration, simulation)."
+                        data-download=""
+                        data-project="https://github.com/quentinchirol/SAE_Mesmoudi">
+                        <div class="work-card__badge">2ème année</div>
+                        <img src="assets/img/Bibliométrie LIAS.png" alt="Analyse Bibliométrique LIAS">
+                        <div class="work-card-content">
+                            <h3>Analyse Bibliométrique – Labo LIAS</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal for project details -->
+                <div class="work-modal" id="work-modal">
+                    <div class="work-modal-content">
+                        <span class="work-modal-close">&times;</span>
+                        <div class="work-modal-body">
+                            <div class="work-modal-info">
+                                <span class="work-modal-category"></span>
+                                <h2 class="work-modal-title"></h2>
+                                <p class="work-modal-description"></p>
+                                <div class="work-modal-buttons">
+                                    <a href="" class="work-modal-github" target="_blank">
+                                        <i class='bx bxl-github'></i> Voir le code
+                                    </a>
+                                    <a href="" class="work-modal-download" download>
+                                        <i class='bx bx-download'></i> Télécharger
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="work-modal-image">
+                                <img src="" alt="">
+                                <a href="" class="work-modal-project" target="_blank">Test Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Me Contacter</h2>
+
+                <div class="contact__container bd-grid">
+                    <!-- Colonne infos -->
+                    <div class="contact__info-col">
+                        <p class="contact__intro">N'hésitez pas à me contacter pour toute opportunité, collaboration ou
+                            question. Je vous répondrai dans les meilleurs délais.</p>
+
+                        <div class="contact__info-list">
+                            <a href="mailto:quentin.chirol@etu.univ-poitiers.fr" class="contact__info-item">
+                                <div class="contact__info-icon">
+                                    <i class='bx bx-envelope'></i>
+                                </div>
+                                <div class="contact__info-text">
+                                    <span class="contact__info-label">Email</span>
+                                    <span class="contact__info-value">quentin.chirol@etu.univ-poitiers.fr</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+33770088109" class="contact__info-item">
+                                <div class="contact__info-icon">
+                                    <i class='bx bx-phone'></i>
+                                </div>
+                                <div class="contact__info-text">
+                                    <span class="contact__info-label">Téléphone</span>
+                                    <span class="contact__info-value">+33 7 70 08 81 09</span>
+                                </div>
+                            </a>
+
+                            <div class="contact__info-item contact__info-item--static">
+                                <div class="contact__info-icon">
+                                    <i class='bx bx-map'></i>
+                                </div>
+                                <div class="contact__info-text">
+                                    <span class="contact__info-label">Localisation</span>
+                                    <span class="contact__info-value">Niort, France</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire -->
+                    <!--
+                        FORMSPREE : Pour activer le formulaire, créez un compte gratuit sur https://formspree.io,
+                        créez un nouveau formulaire, et remplacez "YOUR_FORM_ID" dans action="" par votre ID.
+                        Exemple : action="https://formspree.io/f/abcd1234"
+                    -->
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                        class="contact__form">
+                        <div class="contact__form-group">
+                            <label for="contact-name" class="contact__label">Votre nom</label>
+                            <input type="text" id="contact-name" name="name" required placeholder="Jean Dupont"
+                                class="contact__input">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="contact-email" class="contact__label">Votre email</label>
+                            <input type="email" id="contact-email" name="email" required placeholder="jean@exemple.fr"
+                                class="contact__input">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="contact-subject" class="contact__label">Sujet</label>
+                            <input type="text" id="contact-subject" name="subject" required
+                                placeholder="Opportunité de stage" class="contact__input">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="contact-message" class="contact__label">Votre message</label>
+                            <textarea id="contact-message" name="message" required rows="6"
+                                placeholder="Bonjour Quentin, je souhaitais vous contacter au sujet de..."
+                                class="contact__input contact__textarea"></textarea>
+                        </div>
+
+                        <button type="submit" id="contact-submit" class="contact__button button">
+                            <i class='bx bx-send'></i>
+                            <span>Envoyer</span>
+                        </button>
+
+                        <p id="contact-status" class="contact__status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </section>
+
+            <script>
+                // Gestion de l'envoi du formulaire Formspree avec feedback visuel
+                const contactForm = document.getElementById('contact-form');
+                const contactStatus = document.getElementById('contact-status');
+                const contactSubmit = document.getElementById('contact-submit');
+
+                if (contactForm) {
+                    contactForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        contactSubmit.disabled = true;
+                        contactSubmit.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> <span>Envoi...</span>";
+                        contactStatus.textContent = '';
+                        contactStatus.className = 'contact__status';
+
+                        try {
+                            const response = await fetch(contactForm.action, {
+                                method: 'POST',
+                                body: new FormData(contactForm),
+                                headers: { 'Accept': 'application/json' }
+                            });
+
+                            if (response.ok) {
+                                contactStatus.textContent = '✅ Message envoyé ! Je vous répondrai rapidement.';
+                                contactStatus.classList.add('contact__status--success');
+                                contactForm.reset();
+                            } else {
+                                throw new Error('Erreur serveur');
+                            }
+                        } catch {
+                            contactStatus.textContent = '❌ Une erreur s\'est produite. Contactez-moi par email directement.';
+                            contactStatus.classList.add('contact__status--error');
+                        } finally {
+                            contactSubmit.disabled = false;
+                            contactSubmit.innerHTML = "<i class='bx bx-send'></i> <span>Envoyer</span>";
+                        }
+                    });
+                }
+            </script>
+
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">Quentin Chirol</p>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/quentin-chirol-89a2b127b" class="footer__icon" target="_blank" title="LinkedIn">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="https://github.com/quentinchirol" class="footer__icon" target="_blank" title="GitHub">
+                <i class='bx bxl-github'></i>
+            </a>
+        </div>
+        <p class="footer__copy">&#169; Quentin Chirol. All rights reserved</p>
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

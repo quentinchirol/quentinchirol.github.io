@@ -1,0 +1,14 @@
+# /**
+#  * @AI_SPACE
+#  * @purpose : Exclure les fichiers inutiles de l'image Docker
+#  * @logic : Empêcher la copie de fichiers de config ou de log dans le conteneur Nginx.
+#  * @decisions : Exclure .git, les logs, et les fichiers Docker eux-mêmes pour garder l'image légère.
+#  * @references : https://docs.docker.com/engine/reference/builder/#dockerignore-file
+#  */
+
+.git
+.gitignore
+DEVELOPMENT_LOG.md
+docker-compose.yml
+Dockerfile
+.dockerignore
