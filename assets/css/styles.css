@@ -1591,3 +1591,38 @@ animation: nodePulse 3s ease-in-out infinite;
   z-index: 5;
   pointer-events: none;
 }
+
+/* ===== BILAN PERSONNEL ===== */
+.bilan__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bilan__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bilan__text {
+  font-size: var(--normal-font-size);
+  line-height: 1.85;
+  color: var(--second-color);
+  text-align: justify;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--first-color);
+  background: hsl(var(--hue-color), 60%, 97%);
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.bilan__text:hover {
+  border-left-color: var(--first-color-alt);
+  background: hsl(var(--hue-color), 60%, 94%);
+}
+
+@media screen and (min-width: 768px) {
+  .bilan__container {
+    padding: 0 2rem;
+  }
+}
